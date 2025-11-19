@@ -1,0 +1,61 @@
+[project]
+name = "fizz-buzz"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic==2.11.4",
+    "pydantic-core>=2.18.1",
+    "dishka>=1.6.0",
+    "pydantic-settings>=2.10.1",
+    "fastapi>=0.116.1",
+    "uvicorn>=0.35.0",
+    "uvloop>=0.21.0",
+    "orjson>=3.11.3",
+    "import-linter>=2.3",
+]
+
+[tool.flake8]
+max-line-length = 120
+
+[tool.black]
+line-length = 120
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+
+[tool.ruff]
+lint.select = [
+  "E",
+  "F",
+  "UP",
+  "I",
+]
+target-version = "py312"
+line-length = 120
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+asyncio_mode = "auto"
+
+[tool.importlinter]
+root_packages = ["fizz_buzz"]
+include_external_packages = true
+
+[[tool.importlinter.contracts]]
+name = "Domain cannot call anyone except domain"
+type = "forbidden"
+source_modules = ["fizz_buzz.domain"]
+forbidden_modules = ["fizz_buzz.infrastructure"]
+
+[[tool.importlinter.contracts]]
+name = "Module cannot call test"
+type = "forbidden"
+source_modules = ["fizz_buzz"]
+forbidden_modules = ["tests"]
