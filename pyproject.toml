@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "pydantic==2.11.4",
-    "pydantic-core>=2.18.1",
+    "pydantic-core>=2.33.2",
     "dishka>=1.6.0",
     "pydantic-settings>=2.10.1",
     "fastapi>=0.116.1",
@@ -14,6 +14,11 @@ dependencies = [
     "uvloop>=0.21.0",
     "orjson>=3.11.3",
     "import-linter>=2.3",
+    "pre-commit==3.4.0",
+    "pytest==8.4.1",
+    "pytest-cov==4.1.0",
+    "pytest-asyncio==0.26.0",
+    "httpx==0.28.1"
 ]
 
 [tool.flake8]

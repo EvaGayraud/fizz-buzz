@@ -1,17 +1,27 @@
-from via_report_generator.setup.custom_logging import setup_logger
+from dishka import Provider
+from dishka.integrations.fastapi import setup_dishka
 
-if __name__ == "__main__":
-    import uvicorn
+from fizz_buzz.custom_logging import setup_logger
+from fizz_buzz.setup.app_factory import create_app, configure_app, create_async_ioc_container, \
+    create_ioc_container_context
+from fizz_buzz.setup.ioc.registry import get_providers
 
-    setup_logger()
 
-    uvicorn_kwargs = dict(
-        app="via_report_generator.app_creator:create_app_instance",
-        port=8080,
-        workers=1,
-        proxy_headers=True,
-        host="0.0.0.0",
-        loop="uvloop",
-        factory=True,
-    )
-    uvicorn.run(**uvicorn_kwargs)
+class AppCreator:
+    def __init__(self, *di_providers: Provider) -> None:
+        self.app = create_app()
+        configure_app(app=self.app)
+
+        async_ioc_container = create_async_ioc_container(
+            providers=(*get_providers(), *di_providers),
+            context=create_ioc_container_context(),
+        )
+        setup_dishka(container=async_ioc_container, app=self.app)
+        setup_logger()
+
+        @self.app.get('/')
+        def root():
+            return 'Test: service is working'
+
+app_creator = AppCreator()
+app = app_creator.app

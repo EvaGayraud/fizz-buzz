@@ -57,7 +57,7 @@ def instantiate_all_providers(package_path: str) -> list[Provider]:
     Instantiates all providers found in a package.
 
     Args:
-        package_path: Package path (ex: 'document_extractor.setup.ioc.dishka_providers')
+        package_path: Package path (ex: 'fizz_buzz.setup.ioc.dishka_providers')
 
     Returns:
         List of Provider instances
@@ -73,7 +73,7 @@ def get_providers() -> list[Provider]:
     Returns:
         List of all found provider instances
     """
-    providers = instantiate_all_providers("document_extractor.setup.ioc.dishka_providers")
+    providers = instantiate_all_providers("fizz_buzz.setup.ioc.dishka_providers")
     _log.info(f"Loaded {len(providers)} providers")
 
     return providers
