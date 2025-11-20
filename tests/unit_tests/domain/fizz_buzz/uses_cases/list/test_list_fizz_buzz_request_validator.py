@@ -1,7 +1,7 @@
-from fizz_buzz.domain.fizzbuzz.exceptions.base import InvalidRequest
-from fizz_buzz.domain.fizzbuzz.use_cases.list.list_fizz_buzz_request import ListFizzBuzzRequest
 import pytest
 
+from fizz_buzz.domain.fizzbuzz.exceptions.base import InvalidRequest
+from fizz_buzz.domain.fizzbuzz.use_cases.list.list_fizz_buzz_request import ListFizzBuzzRequest
 from fizz_buzz.domain.fizzbuzz.use_cases.list.list_fizz_buzz_request_validator import ListFizzBuzzRequestValidator
 
 

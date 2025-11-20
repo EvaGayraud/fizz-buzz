@@ -1,3 +1,2 @@
 class InfrastructureException(Exception):
     pass
-

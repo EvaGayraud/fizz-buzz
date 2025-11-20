@@ -10,9 +10,11 @@ from fastapi.responses import ORJSONResponse
 from starlette import status
 from starlette.requests import Request
 
-
-from fizz_buzz.infrastructure.exceptions.constants import ERROR_STATUS_MAPPING, MSG_SERVICE_UNAVAILABLE, \
-    MSG_INTERNAL_SERVER_ERROR
+from fizz_buzz.infrastructure.exceptions.constants import (
+    ERROR_STATUS_MAPPING,
+    MSG_INTERNAL_SERVER_ERROR,
+    MSG_SERVICE_UNAVAILABLE,
+)
 from fizz_buzz.infrastructure.exceptions.schemas import ExceptionSchema, ExceptionSchemaDetailed
 
 log = logging.getLogger(__name__)
@@ -45,7 +47,7 @@ def build_exception_response(exc: Exception, status_code: int) -> ExceptionSchem
     if status_code == status.HTTP_503_SERVICE_UNAVAILABLE:
         return ExceptionSchema(MSG_SERVICE_UNAVAILABLE)
 
-    description = (str(exc) if status_code < status.HTTP_500_INTERNAL_SERVER_ERROR else MSG_INTERNAL_SERVER_ERROR)
+    description = str(exc) if status_code < status.HTTP_500_INTERNAL_SERVER_ERROR else MSG_INTERNAL_SERVER_ERROR
     return ExceptionSchema(description)
 
 

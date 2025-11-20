@@ -1,20 +1,16 @@
-__all__ = (
-    "configure_app",
-    "create_app",
-    "create_async_ioc_container",
-    "create_ioc_container_context"
-)
+__all__ = ("configure_app", "create_app", "create_async_ioc_container", "create_ioc_container_context")
 
 from collections.abc import Iterable
 
-from dishka import Provider, AsyncContainer, make_async_container
+from dishka import AsyncContainer, Provider, make_async_container
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
 from starlette.middleware.cors import CORSMiddleware
 
-from fizz_buzz.infrastructure.exceptions.handlers import setup_handlers
-from fizz_buzz.setup.settings.core import Settings, CoreSettings
 from fizz_buzz.infrastructure.api.v1 import routes as v1_api
+from fizz_buzz.infrastructure.exceptions.handlers import setup_handlers
+from fizz_buzz.setup.settings.core import CoreSettings, Settings
+
 
 def create_app() -> FastAPI:
     return FastAPI(title=Settings().PROJECT_NAME, default_response_class=ORJSONResponse)

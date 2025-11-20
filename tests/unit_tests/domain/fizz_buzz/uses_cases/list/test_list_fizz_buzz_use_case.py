@@ -2,8 +2,9 @@ from unittest.mock import Mock
 
 from fizz_buzz.domain.fizzbuzz.use_cases.list.list_fizz_buzz_request import ListFizzBuzzRequest
 from fizz_buzz.domain.fizzbuzz.use_cases.list.list_fizz_buzz_use_case import ListFizzBuzzUseCase
-from fizz_buzz.domain.fizzbuzz.use_cases.list.services.list_fizz_buzz_request_validation import \
-    ListFizzBuzzRequestValidation
+from fizz_buzz.domain.fizzbuzz.use_cases.list.services.list_fizz_buzz_request_validation import (
+    ListFizzBuzzRequestValidation,
+)
 
 
 def test_that_list_fizz_buzz_use_case_successful() -> None:
