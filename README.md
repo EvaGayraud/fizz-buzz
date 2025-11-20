@@ -13,18 +13,21 @@ Ce projet est configuré pour fonctionner facilement avec Docker.
 
 ### Lancer l'application
 
-Pour construire et lancer les conteneurs :
+Pour construire et lancer le conteneur :
 ```
 docker compose build
 docker compose up
 ```
 
+Pour lancer les tests dans le conteneur :
+```pytest tests/```
 
 L'application sera accessible sur `http://localhost:8000`.
 
 ### Arrêter l'application
 
 Pour arrêter les conteneurs :
+```docker compose down```
 
 
 ## Structure du Projet
