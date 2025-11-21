@@ -2,7 +2,6 @@ from pydantic_settings import BaseSettings
 
 
 class CoreSettings(BaseSettings):
-    MODEL: str = "LLMClient"
     ENVIRONMENT: str = "dev"
 
 
