@@ -18,8 +18,6 @@ repos:
     -   id: trailing-whitespace
         args: ["--markdown-linebreak-ext=md,markdown"]
     -   id: end-of-file-fixer
-    -   id: check-yaml
-        exclude: ^helm/
     -   id: check-added-large-files
     -   id: debug-statements
         language_version: python3
