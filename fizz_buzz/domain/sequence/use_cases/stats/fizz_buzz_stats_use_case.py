@@ -1,14 +1,14 @@
 import json
 
-from fizz_buzz.domain.fizzbuzz.use_cases.list.services.logs_repository import LogsRepository
-from fizz_buzz.domain.fizzbuzz.use_cases.stats.fizz_buzz_stats_response import FizzBuzzStatsResponse
-from fizz_buzz.domain.fizzbuzz.use_cases.stats.services.fizz_buzz_stats_compute_use_case import (
+from fizz_buzz.domain.sequence.services.store.logs_store import LogsStore
+from fizz_buzz.domain.sequence.use_cases.stats.fizz_buzz_stats_response import FizzBuzzStatsResponse
+from fizz_buzz.domain.sequence.use_cases.stats.services.fizz_buzz_stats_compute_use_case import (
     FizzBuzzStatsComputeUseCase,
 )
 
 
 class FizzBuzzStatsUseCase(FizzBuzzStatsComputeUseCase):
-    def __init__(self, logs_repository: LogsRepository) -> None:
+    def __init__(self, logs_repository: LogsStore) -> None:
         self._logs_repository = logs_repository
 
     def execute(self) -> FizzBuzzStatsResponse:

@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class LogsRepository(ABC):
+class LogsStore(ABC):
     @abstractmethod
     def record_request(self, request_key: str) -> None:
         pass

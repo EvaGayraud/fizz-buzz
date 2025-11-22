@@ -2,8 +2,8 @@ from dishka.integrations.fastapi import FromDishka, inject
 from fastapi import APIRouter
 from starlette import status
 
-from fizz_buzz.domain.fizzbuzz.use_cases.stats.fizz_buzz_stats_response import FizzBuzzStatsResponse
-from fizz_buzz.domain.fizzbuzz.use_cases.stats.services.fizz_buzz_stats_compute_use_case import (
+from fizz_buzz.domain.sequence.use_cases.stats.fizz_buzz_stats_response import FizzBuzzStatsResponse
+from fizz_buzz.domain.sequence.use_cases.stats.services.fizz_buzz_stats_compute_use_case import (
     FizzBuzzStatsComputeUseCase,
 )
 

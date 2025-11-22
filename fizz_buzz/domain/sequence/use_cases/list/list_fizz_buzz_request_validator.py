@@ -1,6 +1,6 @@
-from fizz_buzz.domain.fizzbuzz.exceptions.base import InvalidRequest
-from fizz_buzz.domain.fizzbuzz.use_cases.list.list_fizz_buzz_request import ListFizzBuzzRequest
-from fizz_buzz.domain.fizzbuzz.use_cases.list.services.list_fizz_buzz_request_validation import (
+from fizz_buzz.domain.sequence.exceptions.base import InvalidRequest
+from fizz_buzz.domain.sequence.use_cases.list.list_fizz_buzz_request import ListFizzBuzzRequest
+from fizz_buzz.domain.sequence.use_cases.list.services.list_fizz_buzz_request_validation import (
     ListFizzBuzzRequestValidation,
 )
 

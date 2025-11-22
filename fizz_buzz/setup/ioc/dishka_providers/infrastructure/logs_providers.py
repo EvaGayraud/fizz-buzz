@@ -1,6 +1,6 @@
 from dishka import Provider, Scope, provide
 
-from fizz_buzz.infrastructure.persistence.logs.in_memory_logs import InMemoryLogs
+from fizz_buzz.infrastructure.store.logs.in_memory_logs import InMemoryLogs
 
 
 class InMemoryLogsProvider(Provider):

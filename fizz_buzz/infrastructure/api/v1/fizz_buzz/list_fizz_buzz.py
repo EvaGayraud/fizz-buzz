@@ -2,9 +2,9 @@ from dishka.integrations.fastapi import FromDishka, inject
 from fastapi import APIRouter, Body
 from starlette import status
 
-from fizz_buzz.domain.fizzbuzz.use_cases.list.list_fizz_buzz_request import ListFizzBuzzRequest
-from fizz_buzz.domain.fizzbuzz.use_cases.list.list_fizz_buzz_response import ListFizzBuzzResponse
-from fizz_buzz.domain.fizzbuzz.use_cases.list.services.listing_fizz_buzz_use_case import ListingFizzBuzzUseCase
+from fizz_buzz.domain.sequence.use_cases.list.list_fizz_buzz_request import ListFizzBuzzRequest
+from fizz_buzz.domain.sequence.use_cases.list.list_fizz_buzz_response import ListFizzBuzzResponse
+from fizz_buzz.domain.sequence.use_cases.list.services.listing_fizz_buzz_use_case import ListingFizzBuzzUseCase
 
 router = APIRouter()
 

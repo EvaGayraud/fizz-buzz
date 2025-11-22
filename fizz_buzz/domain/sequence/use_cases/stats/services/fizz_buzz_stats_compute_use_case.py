@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from fizz_buzz.domain.fizzbuzz.use_cases.stats.fizz_buzz_stats_response import FizzBuzzStatsResponse
+from fizz_buzz.domain.sequence.use_cases.stats.fizz_buzz_stats_response import FizzBuzzStatsResponse
 
 
 class FizzBuzzStatsComputeUseCase(ABC):

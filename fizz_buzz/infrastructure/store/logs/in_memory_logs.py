@@ -1,9 +1,9 @@
 from collections import Counter
 
-from fizz_buzz.domain.fizzbuzz.use_cases.list.services.logs_repository import LogsRepository
+from fizz_buzz.domain.sequence.services.store.logs_store import LogsStore
 
 
-class InMemoryLogs(LogsRepository):
+class InMemoryLogs(LogsStore):
     def __init__(self) -> None:
         self.counter = Counter()
 

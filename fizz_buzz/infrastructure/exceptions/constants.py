@@ -5,7 +5,7 @@ from typing import Final
 import pydantic
 from starlette import status
 
-from fizz_buzz.domain.fizzbuzz.exceptions.base import InvalidRequest
+from fizz_buzz.domain.sequence.exceptions.base import InvalidRequest
 
 MSG_SERVICE_UNAVAILABLE: Final[str] = "Service temporarily unavailable. Please try again later."
 MSG_INTERNAL_SERVER_ERROR: Final[str] = "Internal server error."

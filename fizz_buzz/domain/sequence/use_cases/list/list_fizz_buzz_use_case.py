@@ -1,16 +1,16 @@
 import json
 
-from fizz_buzz.domain.fizzbuzz.use_cases.list.list_fizz_buzz_request import ListFizzBuzzRequest
-from fizz_buzz.domain.fizzbuzz.use_cases.list.list_fizz_buzz_response import ListFizzBuzzResponse
-from fizz_buzz.domain.fizzbuzz.use_cases.list.services.list_fizz_buzz_request_validation import (
+from fizz_buzz.domain.sequence.services.store.logs_store import LogsStore
+from fizz_buzz.domain.sequence.use_cases.list.list_fizz_buzz_request import ListFizzBuzzRequest
+from fizz_buzz.domain.sequence.use_cases.list.list_fizz_buzz_response import ListFizzBuzzResponse
+from fizz_buzz.domain.sequence.use_cases.list.services.list_fizz_buzz_request_validation import (
     ListFizzBuzzRequestValidation,
 )
-from fizz_buzz.domain.fizzbuzz.use_cases.list.services.listing_fizz_buzz_use_case import ListingFizzBuzzUseCase
-from fizz_buzz.domain.fizzbuzz.use_cases.list.services.logs_repository import LogsRepository
+from fizz_buzz.domain.sequence.use_cases.list.services.listing_fizz_buzz_use_case import ListingFizzBuzzUseCase
 
 
 class ListFizzBuzzUseCase(ListingFizzBuzzUseCase):
-    def __init__(self, validator: ListFizzBuzzRequestValidation, logs_repository: LogsRepository) -> None:
+    def __init__(self, validator: ListFizzBuzzRequestValidation, logs_repository: LogsStore) -> None:
         self._validator = validator
         self._logs_repository = logs_repository
 
