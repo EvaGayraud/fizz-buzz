@@ -8,7 +8,7 @@ class InMemoryLogs(LogsStore):
     def __init__(self) -> None:
         self.counter = Counter()
 
-    def record_request(self, sequence_identifier: Identifier) -> None:
+    def record(self, sequence_identifier: Identifier) -> None:
         self.counter[sequence_identifier.value] += 1
 
     def get_most_common(self) -> tuple[str | None, int]:

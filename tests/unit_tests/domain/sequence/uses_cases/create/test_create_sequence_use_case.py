@@ -16,10 +16,10 @@ def test_that_create_sequence_use_case_successful() -> None:
     given_request = CreateSequenceRequest(limit=10, integer_1=3, string_1="fizz", string_2="buzz", integer_2=5)
     sut = CreateSequenceUseCase(
         validator=Mock(spec=CreateSequenceRequestValidation),
-        logs_repository=Mock(spec=LogsStore),
+        logs_store=Mock(spec=LogsStore),
         factory=Mock(spec=CreateSequenceCreation),
     )
-    sut._logs_repository.record_request.return_value = None
+    sut._logs_repository.record.return_value = None
     sut._validator.validate.return_value = None
     sut._factory.create.return_value = SequenceBuilder().build()
 

@@ -37,12 +37,8 @@ Pour arrêter les conteneurs :
 *   `Dockerfile` : Configuration pour la création de l'image Docker.
 *   `docker-compose.yml` : Configuration pour l'orchestration des conteneurs.
 
-Le projet a été développé en suivant les principes de la Clean Architecture.
-Cependant, il n’intègre pas réellement d’entités, ce qui s’éloigne un peu de l’esprit de ce modèle : en général,
-dès lors que l’on définit un domaine, on définit aussi des entités qui le représentent.
-
-C’est ainsi que je structure mes projets aujourd’hui. J’ai appliqué cette approche pour le test, mais ce n’était
-peut-être pas le choix le plus adapté au contexte.
+J'ai développé le projet en suivant les principes de la Clean Architecture car c'est ainsi que je structure mes projets
+aujourd’hui. J’ai appliqué cette approche pour le test, mais une autre approche aurait pu être plus pragmatique.
 
 Voici une autre architecture possible :
 ```

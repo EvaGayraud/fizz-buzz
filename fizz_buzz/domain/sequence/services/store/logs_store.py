@@ -5,7 +5,7 @@ from fizz_buzz.domain.value_objects.identifier import Identifier
 
 class LogsStore(ABC):
     @abstractmethod
-    def record_request(self, sequence_identifier: Identifier) -> None:
+    def record(self, sequence_identifier: Identifier) -> None:
         pass
 
     @abstractmethod

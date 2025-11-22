@@ -22,7 +22,7 @@ class ListFizzBuzzUseCaseProvider(Provider):
         self, logs_repository: InMemoryLogs, factory: CreateSequenceFactory
     ) -> CreatingSequenceUseCase:
         return CreateSequenceUseCase(
-            validator=CreateSequenceRequestValidator(), logs_repository=logs_repository, factory=factory
+            validator=CreateSequenceRequestValidator(), logs_store=logs_repository, factory=factory
         )
 
 

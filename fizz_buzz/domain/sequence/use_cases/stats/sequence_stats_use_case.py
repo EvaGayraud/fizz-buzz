@@ -6,11 +6,11 @@ from fizz_buzz.domain.sequence.use_cases.stats.sequence_stats_response import Se
 
 
 class SequenceStatsUseCase(SequenceStatsComputeUseCase):
-    def __init__(self, logs_repository: LogsStore) -> None:
-        self._logs_repository = logs_repository
+    def __init__(self, logs_store: LogsStore) -> None:
+        self.logs_store = logs_store
 
     def execute(self) -> SequenceStatsResponse:
-        request_identifier, hits = self._logs_repository.get_most_common()
+        request_identifier, hits = self.logs_store.get_most_common()
         if not request_identifier:
             return SequenceStatsResponse(most_used_request="No requests recorded yet", hit_number=0)
 

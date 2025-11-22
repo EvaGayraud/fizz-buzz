@@ -10,10 +10,10 @@ from fizz_buzz.domain.sequence.use_cases.create.services.create_sequence_request
 
 class CreateSequenceUseCase(CreatingSequenceUseCase):
     def __init__(
-        self, validator: CreateSequenceRequestValidation, logs_repository: LogsStore, factory: CreateSequenceCreation
+        self, validator: CreateSequenceRequestValidation, logs_store: LogsStore, factory: CreateSequenceCreation
     ) -> None:
         self._validator = validator
-        self._logs_repository = logs_repository
+        self.logs_store = logs_store
         self._factory = factory
 
     def execute(self, request: CreateSequenceRequest) -> CreateSequenceResponse:
@@ -21,6 +21,6 @@ class CreateSequenceUseCase(CreatingSequenceUseCase):
 
         sequence = self._factory.create(request)
 
-        self._logs_repository.record_request(sequence.identifier)
+        self.logs_store.record(sequence.identifier)
 
         return CreateSequenceResponse(sequence=sequence)
