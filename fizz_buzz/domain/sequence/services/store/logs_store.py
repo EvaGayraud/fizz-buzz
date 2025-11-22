@@ -1,9 +1,11 @@
 from abc import ABC, abstractmethod
 
+from fizz_buzz.domain.value_objects.identifier import Identifier
+
 
 class LogsStore(ABC):
     @abstractmethod
-    def record_request(self, request_key: str) -> None:
+    def record_request(self, sequence_identifier: Identifier) -> None:
         pass
 
     @abstractmethod

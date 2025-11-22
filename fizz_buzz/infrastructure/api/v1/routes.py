@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 
-from fizz_buzz.infrastructure.api.v1.fizz_buzz import fizz_buzz_stats, list_fizz_buzz
+from fizz_buzz.infrastructure.api.v1.sequence import create_sequence, sequence_stats
 
 router = APIRouter()
 
-router.include_router(list_fizz_buzz.router, tags=["fizz_buzzs"], prefix="/fizz_buzzs")
-router.include_router(fizz_buzz_stats.router, tags=["fizz_buzzs"], prefix="/stats")
+router.include_router(create_sequence.router, tags=["sequences"], prefix="/sequences")
+router.include_router(sequence_stats.router, tags=["sequences"], prefix="/stats")
