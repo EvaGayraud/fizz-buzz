@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from fizz_buzz.domain.value_objects.identifier import Identifier
+from fizz_buzz.domain.sequence.value_objects.identifier import Identifier
 
 
 class LogsStore(ABC):

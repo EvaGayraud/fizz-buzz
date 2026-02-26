@@ -1,55 +1,25 @@
 # FizzBuzz Backend
-
-Ce projet implémente une API FizzBuzz en Python.
-
-## Prérequis
-
+This project implements a FizzBuzz API in Python.
+## Prerequisites
 *   Docker
 *   Docker Compose
-
-## Installation et Lancement avec Docker
-
-Ce projet est configuré pour fonctionner facilement avec Docker.
-
-### Lancer l'application
-
-Pour construire et lancer le conteneur :
+## Installation and Launch with Docker
+This project is configured to run easily with Docker.
+### Start the application
+To build and start the container:
 ```
 docker compose build
 docker compose up
 ```
-
-Pour lancer les tests dans le conteneur :
+To run the tests inside the container:
 ```pytest tests/```
-
-L'application sera accessible sur `http://localhost:8000`.
-
-### Arrêter l'application
-
-Pour arrêter les conteneurs :
+The application will be accessible at `http://localhost:8000`.
+### Stop the application
+To stop the containers:
 ```docker compose down```
 
-
-## Structure du Projet
-
-*   `fizz_buzz/` : Code source de l'application.
-*   `tests/` : Tests unitaires et d'intégration.
-*   `Dockerfile` : Configuration pour la création de l'image Docker.
-*   `docker-compose.yml` : Configuration pour l'orchestration des conteneurs.
-
-J'ai développé le projet en suivant les principes de la Clean Architecture car c'est ainsi que je structure mes projets
-aujourd’hui. J’ai appliqué cette approche pour le test, mais une autre approche aurait pu être plus pragmatique.
-
-Voici une autre architecture possible :
-```
-/fizz_buzz
-    /api
-        /v1
-            /endpoints
-                routes.py
-                models.py
-    /core
-        config.py
-        stats.py
-    main.py
-```
+## Project Structure
+*   `fizz_buzz/`: Application source code.
+*   `tests/`: Unit and integration tests.
+*   `Dockerfile`: Configuration for building the Docker image.
+*   `docker-compose.yml`: Configuration for container orchestration.

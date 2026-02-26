@@ -1,7 +1,7 @@
 import uuid
 
 from fizz_buzz.domain.sequence.services.identifier_generation import IdentifierGeneration
-from fizz_buzz.domain.value_objects.identifier import Identifier
+from fizz_buzz.domain.sequence.value_objects.identifier import Identifier
 
 
 class IdentifierGenerator(IdentifierGeneration):

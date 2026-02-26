@@ -1,7 +1,5 @@
 from unittest.mock import Mock
 
-from support.builders.sequence_builder import SequenceBuilder
-
 from fizz_buzz.domain.sequence.services.store.logs_store import LogsStore
 from fizz_buzz.domain.sequence.use_cases.create.create_sequence_request import CreateSequenceRequest
 from fizz_buzz.domain.sequence.use_cases.create.create_sequence_use_case import CreateSequenceUseCase
@@ -9,6 +7,7 @@ from fizz_buzz.domain.sequence.use_cases.create.services.create_sequence_creatio
 from fizz_buzz.domain.sequence.use_cases.create.services.create_sequence_request_validation import (
     CreateSequenceRequestValidation,
 )
+from tests.support.builders.sequence_builder import SequenceBuilder
 
 
 def test_that_create_sequence_use_case_successful() -> None:
@@ -19,7 +18,7 @@ def test_that_create_sequence_use_case_successful() -> None:
         logs_store=Mock(spec=LogsStore),
         factory=Mock(spec=CreateSequenceCreation),
     )
-    sut._logs_repository.record.return_value = None
+    sut.logs_store.record.return_value = None
     sut._validator.validate.return_value = None
     sut._factory.create.return_value = SequenceBuilder().build()
 

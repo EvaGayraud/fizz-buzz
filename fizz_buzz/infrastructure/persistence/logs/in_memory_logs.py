@@ -1,7 +1,7 @@
 from collections import Counter
 
 from fizz_buzz.domain.sequence.services.store.logs_store import LogsStore
-from fizz_buzz.domain.value_objects.identifier import Identifier
+from fizz_buzz.domain.sequence.value_objects.identifier import Identifier
 
 
 class InMemoryLogs(LogsStore):

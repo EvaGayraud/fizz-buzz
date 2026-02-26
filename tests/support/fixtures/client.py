@@ -1,7 +1,7 @@
 from pytest import fixture
 from starlette.testclient import TestClient
 
-from fizz_buzz.__main__ import AppCreator
+from fizz_buzz.app_creator import AppCreator
 
 
 @fixture

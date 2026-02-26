@@ -1,5 +1,5 @@
 from fizz_buzz.domain.sequence.entities.sequence import Sequence
-from fizz_buzz.domain.value_objects.identifier import Identifier
+from fizz_buzz.domain.sequence.value_objects.identifier import Identifier
 
 
 class SequenceBuilder:
