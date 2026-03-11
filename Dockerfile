@@ -45,4 +45,4 @@ COPY --chown=appuser:appuser fizz_buzz/ ./fizz_buzz/
 USER appuser
 EXPOSE 8000
 
-ENTRYPOINT ["uvicorn", "fizz_buzz.__main__:app", "--host", "0.0.0.0", "--port", "8000"]
+ENTRYPOINT ["python", "fizz_buzz"]
